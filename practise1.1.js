@@ -1,5 +1,5 @@
 
-//Objects in js
+//Objects in js   using object literal{}
 //  * ----------------------------------------------------
 //  * 👉 Objects are collections of key-value pairs.
 //  * 👉 Keys are strings (or symbols), values can be anything

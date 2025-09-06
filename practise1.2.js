@@ -134,3 +134,21 @@ console.log("printing entries of objects ::",Object.entries(objexample));
 console.log('checking if key (property) exists in object or not::',Object.hasOwnProperty('objexample'));
 //object hasOwnProperty('takes string as arg');  return boolean
 
+
+    //Destructuring of Object
+
+    const objex1={
+        name:"athrvq",
+        email:"athrv@gmail.com",
+        phone:7219205202,
+        isOnboarded:false
+    };
+
+
+    //destructing in object
+    const {name,email}=objex1;
+    console.log(name,email)   //athrvq athrv@gmail.com
+
+    //u can give name too:
+    const {name:newName}=objex1;
+    console.log(newName)   //athrvq

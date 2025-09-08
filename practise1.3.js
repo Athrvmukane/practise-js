@@ -84,6 +84,44 @@ console.log(userloggedInMsg());
 //see u in the next part!!! 
 
 
+//rest operator
+function calculateCartPrize(num){
+    return num;
+}
+
+console.log(calculateCartPrize(2));    //2
+/// but if 
+console.log(calculateCartPrize(200,300,400));  //200 it will ignore rest arguments so:
+
+function cartPrize(...num){     //with functions these 3 dots called rest operator
+    return num;
+}
+console.log(cartPrize(200,300,400)) ; //it will return [200,300,400];
+
+//functions with oject
+
+const user={
+    username:"athrv",
+    email:"athrv@gmail.com"
+}
+
+function funcWithObjects(anyobj){
+    return `user : ${anyobj.username}  logged in with mail: ${anyobj.email}`
+}
+
+// console.log(funcWithObjects(user));
+//u can also directly pass obj
+console.log(funcWithObjects({
+    username:"athrv",
+    email:"athrv@gmail.com",
+    age:22
+}));
+
+
+
+
+
+
 
 
 

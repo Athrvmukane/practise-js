@@ -200,3 +200,41 @@ console.log(globalfunc2)   //u will get undifned and code will be like undined()
 
 //so in TDZ variable exist bt we cant access it 
 
+
+
+//some more about functions 
+
+// ➤ Example to explain variable shadowing, hoisting, and scope resolution
+
+var admin = "athrv";  // Global variable named 'admin'
+
+function hello() {
+    // Even though we haven't assigned a value yet, this local 'admin' is hoisted
+    // JavaScript treats it as if we wrote:
+    // var admin;
+    
+    console.log(admin); // Logs 'undefined'
+    // Why? Because the local 'admin' exists (hoisted) but hasn't been assigned a value yet.  bcuz for function new Global Exe Contxt is made
+    // It shadows the global 'admin', so 'athrv' is not used here.
+
+    var admin = "atharva"; // Local 'admin' is assigned the value 'atharva'
+    
+    function inner() {
+        console.log(admin); // Logs 'atharva'
+        // JavaScript looks in the nearest scope, finds 'admin' in 'hello', and uses it.
+    }
+
+    inner(); // Calls the 'inner' function
+}
+
+hello(); // Calls the 'hello' function
+
+// ➤ Why doesn't it log "athrv" in the first console.log?
+// Because the local 'admin' declared inside 'hello' function takes priority over the global one,
+// even if it hasn't been assigned a value yet. JavaScript hoists the declaration, making it undefined initially.
+
+// ➤ Key points:
+// 1. Variable declarations using 'var' are hoisted to the top of their scope.
+// 2. Local variables shadow global ones when names are the same.
+// 3. Even if a local variable is undefined at the moment of access, it still blocks access to outer scopes.
+// 4. 'console.log(admin)' inside 'inner' accesses the nearest 'admin' in the 'hello' function scope.
